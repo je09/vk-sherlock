@@ -2,6 +2,7 @@
 import vk_api
 import click
 
+
 def _id_join(ids: dict):
     return ','.join(str(i) for i in ids)
 

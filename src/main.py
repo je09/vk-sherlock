@@ -189,14 +189,15 @@ def search(ctx, name, work, info, count, city, country, hometown,
 @click.option('--id', 'user_ids', type=str, default='', multiple=True, help='User or users id')
 @click.option('--info', type=click.IntRange(1, 3), default='1')
 @click.option('-o', '--open', 'path', type=str, default='', help='Open previous results')
+@click.option('-c', '--count', type=click.IntRange(20, 1000), default=20)
 @click.pass_context
-def user_info(ctx, user_ids, info, path):
+def user_info(ctx, user_ids, info, path, count):
     vk = ctx.obj['VK']
 
     if path:
         user_ids = open_result(path)
 
-    people = people_command.get_user_info(vk, user_ids, info)
+    people = people_command.get_user_info(vk, count, user_ids, info)
     print_result(people, ctx.obj['WRITE'])
 
 
