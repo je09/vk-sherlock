@@ -75,3 +75,11 @@ Options:
   --help                     Show this message and exit.
 ```
 
+### ToDo:
+
+1. Fix missspellings
+2. Fix several bugs
+3. Add multithreading when it's possible
+4. Flag to download images of profile
+5. Improve output file structure
+6. Add Google Dorks support for working around private profiles
