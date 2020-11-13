@@ -51,9 +51,8 @@ def get_user_friends(vk, count, user_ids: dict, info):
 def get_user_groups(vk, count, user_ids: dict):
     result = {'count': 0, 'items': []}
     for user_id in user_ids:
-        groups = vk.freinds.get(user_id=user_id, count=count, extended=1)
+        groups = vk.users.getSubscriptions(user_id=user_id, count=count, extended=1)
         result['count'] += groups['count']
         result['items'].extend(groups['items'])
 
     return result['count'], result['items']
-

@@ -1,8 +1,8 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='vk-sherlock',
-    version='0.1',
+    version='0.2',
     packages=['src', 'src.commands'],
     url='https://github.com/je09/vk-sherlock',
     license='MIT',
